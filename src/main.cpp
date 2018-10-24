@@ -10,9 +10,12 @@ int rawValue = 0;
 int ANALOG_TEMPERATURE = A0;
 int ANALOG_HEARTBEAT = A1;
 
+LiquidCrystal lcd(7,8,9,10,11,12); // (RS, E, D4, D5, D6, D7)
+
 void setup() 
 {
-  Serial.begin(9600);
+	lcd.begin(16,2);
+	Serial.begin(9600);
 }
 
 
@@ -50,6 +53,27 @@ double GetTemperature(int value) {
   Temp = 1/(0.001129148+(0.000234125+(0.0000000876741*Temp*Temp))*Temp);
   Temp = Temp - 233.15;
   return Temp;
+}
+
+
+void displayLED(double heart, double temp) {
+
+  lcd.clear();
+    if(heart>=0.0 && heart<=1.0){ //손가락 터치 않함
+      lcd.print("Heart  : DANGER");
+      digitalWrite(ALERT, HIGH);
+    }else{
+      lcd.print("Heart  : Average");
+      digitalWrite(ALERT, LOW);
+    }
+  lcd.setCursor(0,1);
+  if(temp<=70){ // 안 누르고 있을때 
+      lcd.print("Temp   : DANGER");
+      digitalWrite(ALERT, HIGH);
+    }else{
+      lcd.print("Temp   : Average");
+      digitalWrite(ALERT, LOW);
+    }
 }
 
 
