@@ -1,7 +1,10 @@
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 
+#define ALERT 5
 
 //====== HEART BEAT VALUE===========
+#define HEART_BEAT_LIST_NUM 30
 double oldValue = 0;
 double value = 0;
 int rawValue = 0;
@@ -15,6 +18,7 @@ LiquidCrystal lcd(7,8,9,10,11,12); // (RS, E, D4, D5, D6, D7)
 void setup() 
 {
 	lcd.begin(16,2);
+	pinMode(ALERT, OUTPUT);
 	Serial.begin(9600);
 }
 
