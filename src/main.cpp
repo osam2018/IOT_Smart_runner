@@ -62,8 +62,9 @@ double GetTemperature(int value) {
 
 
 void displayLED(double heart, double temp) {
+
 	lcd.clear();
-    if(heart>=0.0 && heart<=1.0) // 손가락 터치 않함
+    if(heart>=0.0 && heart<=1.0) // 손가락 터치 안함
 	{
       lcd.print("Heart  : DANGER");
       digitalWrite(ALERT, HIGH);
