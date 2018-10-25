@@ -56,6 +56,7 @@ double GetTemperature(int value) {
 	Temp = log(10000.0/(1024.0/value-1));
 	Temp = 1/(0.001129148+(0.000234125+(0.0000000876741*Temp*Temp))*Temp);
 	Temp = Temp - 233.15;
+	Serial.println(Temp);
 	return Temp;
 }
 
@@ -72,6 +73,7 @@ void displayLED(double heart, double temp) {
       lcd.print("Heart  : Average");
       digitalWrite(ALERT, LOW);
     }
+	
   	lcd.setCursor(0,1);
   	if(temp<=70) // 안 누르고 있을때
 	{ 
