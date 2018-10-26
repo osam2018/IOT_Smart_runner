@@ -71,6 +71,7 @@ void displayLED(double heart, double temp) {
   {
       lcd.print("Heart  : DANGER");
       digitalWrite(ALERT, HIGH);
+      Serial.print("병사의 심장 박동수가 불안전합니다");
     }
   else
   {
@@ -83,6 +84,7 @@ void displayLED(double heart, double temp) {
   { 
       lcd.print("Temp   : DANGER");
       digitalWrite(ALERT, HIGH);
+      Serial.print("병사의 현재 체온이 정상이 ");
     }
   else
   {
