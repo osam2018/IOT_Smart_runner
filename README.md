@@ -2,9 +2,9 @@
 ## 프로젝트 : 작작뛰어
 ### 폴더
   * src : 소스파일
-  * smart runner pre.pptx - 발표파일(ppt)
-  * smart runner pre.pdf - 발표파일(pdf)
-  
+  * smart_runner_presentation.pptx - 발표파일(ppt)
+  * smart_runner_presentation.pdf - 발표파일(pdf)
+  * Iot_세이브_밴드_요약서.hwp - 제안서
 ### 프로젝트 설명
 
   * 작작뛰어는 사용자가 구보중에 비정상적인 심장박동, 체온변화를 감지하여 지휘관 및 본인에게 알림음을 통해 알려주고, 빠른 응급처치를 도와줍니다.
